@@ -88,7 +88,7 @@ The trained models, the training logs, and the raw tracking results are provided
 
 
 
-## About joint-optimization for transformer-based trackers.
+##  MSTL framework for other transformer-based trackers.
 
 Typically, there are two main paradigms for transformer tracking:
 
