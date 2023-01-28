@@ -90,11 +90,7 @@ The trained models, the training logs, and the raw tracking results are provided
 
 ##  MSTL framework for other transformer-based trackers.
 
-Typically, there are two main paradigms for transformer tracking:
-
-**Paradigm1:** The template features are processed by the Transformer Encoder whereas the Transformer Decoder fuses search and template features using cross attention layers to compute a response map.  The map is then input into prediction heads to locate the target. (CVPR2021 TrDiMP,  CVPR2021 TransT etc)
-
-As an example, we will use TransT with 4 feature integration layers (Each layer with 2 self-Attention and 2 Cross-Attention) to demonstrate how to implement the proposed decoupling strategy.
+As an example, we will use TransT(CVPR2021) with 4 feature integration layers (Each layer with 2 self-Attention and 2 Cross-Attention) to demonstrate how to implement the proposed decoupling strategy.
 
 - During training:
   - Step 1: Feed the outputs of the second layers into an additional cross-attention mechanism to fuse the search and template features.(only for Paradigm1)
@@ -108,23 +104,10 @@ As an example, we will use TransT with 4 feature integration layers (Each layer 
 | Tracker | Original Succ. (UAV123) | Original params | Succ. (After decoupling) | params(After decoupling) |
 | ------- | ----------------------------- | --------------- | -------------------- | ------ |
 | TransT  | 69.1                          | 23.0M           | -                    | 16.7M  |
-
-
-
-**Paradigm2:** Search features and template features are stacked and processed jointly by the full Transformer. Then, Both encoder and decoder outputs are then further processed to predict the bounding box of the target.(ICCV2021 STARK,  CVPR2022 ToMP, ECCV2022 OSTrack etc)
-
-Here, we take STARK with 6 Encoder-Decoder layers as an example to illustrate how to use the proposed decoupling strategy. 
-
-- During the training phase:
-  - Step 1: The encoder outputs are fed into a Corner-prediction network, which is responsible for predicting the bounding box of the target directly.
-  - Step 2: The original model and the additional Corner-prediction network are jointly trained.
-- During the inference phase:
-  - Step 1: The transformer decoder is removed.
-  - Step 2: The outputs of the Corner-prediction network are utilized as the final tracking results.
-
-| Tracker | Original Succ.(UAV123) | Original params  | Succ. (After decoupling) | params(After decoupling)  | 
-| ------- | ---------------------- | ---------------  | -------------- | ------- | 
 | STARK-S | 68.35                  | 28.079M            | **68.55**      | 18.616M | 
+
+For further information, we will make the corresponding codes and pre-trained models available.
+ 
 
 
 
