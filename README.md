@@ -89,11 +89,14 @@ The trained models, the training logs, and the raw tracking results are provided
 
 
 ##  MSTL framework for other transformer-based trackers.
+To use our framework for other transformer-based trackers,  we jointly trained the original
+tracker with an additional prediction head. The head takes outputs of the transformer encoder(or transformer-based structure)
+as inputs and predicts the bounding box of the target directly.
 
 As an example, we use TransT(CVPR2021) with 4 feature integration layers (Each layer with 2 self-Attention and 2 Cross-Attention) to demonstrate how to implement the proposed decoupling strategy.
 
 - During training:
-  - Step 1: Feed the outputs of the second layers into an additional cross-attention mechanism to fuse the search and template features.(only for Paradigm1)
+  - Step 1: Feed the outputs of the second layers into an additional cross-attention mechanism to fuse the search and template features.
   - Step 2: Use the outputs of the cross-attention as input for prediction heads to locate the target.
   - Step 3: Train the original model together with the additional cross-attention layer and prediction heads.
 - During inference:
