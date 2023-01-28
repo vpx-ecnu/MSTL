@@ -100,7 +100,7 @@ As an example, we use TransT(CVPR2021) with 4 feature integration layers (Each l
   - Step 2: Use the outputs of the cross-attention as input for prediction heads to locate the target.
   - Step 3: Train the original model together with the additional cross-attention layer and prediction heads.
 - During inference:
-  - We use the outputs of the second layer locate the target.
+  - We use the outputs of the second layer to locate the target.
 
 ![TransT](TransT.png)
 
