@@ -105,7 +105,7 @@ As an example, we will use TransT with 4 feature integration layers (Each layer 
 
 ![TransT](TransT.png)
 
-| Tracker | Original Succ./Prec. (UAV123) | Original params | Succ./Prec. (UAV123) | params |
+| Tracker | Original Succ. (UAV123) | Original params | Succ. (After decoupling) | params(After decoupling) |
 | ------- | ----------------------------- | --------------- | -------------------- | ------ |
 | TransT  | 69.1                          | 23.0M           | -                    | 16.7M  |
 
@@ -122,9 +122,9 @@ Here, we take STARK with 6 Encoder-Decoder layers as an example to illustrate ho
   - Step 1: The transformer decoder is removed.
   - Step 2: The outputs of the Corner-prediction network are utilized as the final tracking results.
 
-| Tracker | Original Succ.(UAV123) | Original params | Original macs | Succ. (UAV123) | params  | macs    |
-| ------- | ---------------------- | --------------- | ------------- | -------------- | ------- | ------- |
-| STARK-S | 68.35                  | 28.079M         | 12.862G       | **68.55**      | 18.616M | 12.488G |
+| Tracker | Original Succ.(UAV123) | Original params  | Succ. (After decoupling) | params(After decoupling)  | 
+| ------- | ---------------------- | ---------------  | -------------- | ------- | 
+| STARK-S | 68.35                  | 28.079M            | **68.55**      | 18.616M | 
 
 
 
