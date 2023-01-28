@@ -90,7 +90,7 @@ The trained models, the training logs, and the raw tracking results are provided
 
 ##  MSTL framework for other transformer-based trackers.
 
-As an example, we will use TransT(CVPR2021) with 4 feature integration layers (Each layer with 2 self-Attention and 2 Cross-Attention) to demonstrate how to implement the proposed decoupling strategy.
+As an example, we use TransT(CVPR2021) with 4 feature integration layers (Each layer with 2 self-Attention and 2 Cross-Attention) to demonstrate how to implement the proposed decoupling strategy.
 
 - During training:
   - Step 1: Feed the outputs of the second layers into an additional cross-attention mechanism to fuse the search and template features.(only for Paradigm1)
